@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from torch.nn import init 
 
-class SlotAttention(nn.Moudle):
+class SlotAttention(nn.Module):
     def __init__(self,num_slots,dim,iters=3,eps=1e-8,hidden_dim=128):
         super().__init__()
         
