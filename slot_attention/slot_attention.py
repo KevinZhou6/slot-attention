@@ -50,11 +50,11 @@ class SlotAttention(nn.Moudle):
             slots = self.norm_slots(slots)
             q = self.to_q(slots)
             dots = torch.einsum('bid,bjd->bij',q,k)*self.scale 
-            attn  =dots.softmax(dim=1)+self.eps
+            attn  =dots.softmax(dim=1)+self.eps # b,k,n
             
-            attn = attn /attn.sum(dim=-1,keepdim=True)
+            attn = attn /attn.sum(dim=-1,keepdim=True) # b,k,n
             
-            updates = torch.einsum('bjd,bij->bid',v,attn)
+            updates = torch.einsum('bjd,bij->bid',v,attn) # b k d
             
             slots= self.gru(
                 updates.reshape(-1,d),

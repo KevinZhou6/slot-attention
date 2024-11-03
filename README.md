@@ -4,6 +4,8 @@ Implementation of <a href="https://arxiv.org/abs/2006.15055">Slot Attention</a> 
 
 Update: The official repository has been released <a href="https://github.com/google-research/google-research/tree/master/slot_attention">here</a>
 
+``2020's paper from Google Research``
+
 ## Usage
 
 ```python
